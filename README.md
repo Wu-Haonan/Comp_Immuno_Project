@@ -27,3 +27,19 @@ We extract corresponding substrings from the abovle whole genomes and store them
 ### Dotplot
 
 We run [PatchWorkPlot](https://github.com/yana-safonova/PatchWorkPlot) and generate Multiple-dotplot in `./IGH_Haonan/Multi_dotplots/`. We generate another version with keeping all the alignments greater than 20,000 in `./IGH_Haonan/Multi_dotplots_filter/`. 
+
+### Repeat Map
+
+1. Cut Repeat A,B and C
+
+2. Run lastz
+
+   ```
+   lastz ./IGdetective_Predict_IGHs/Macaca_nemestrina-hap2_IGH.fasta[multiple] \
+     --filter=identity:90 --filter=coverage:30 \
+     ./RepeatRegion/Repeat_all.fasta \
+     --format=general:name1,start1,end1,name2,start2,end2,strand2,identity,score \
+     > ./Repeat_Map/MN_hap2.txt
+   ```
+
+   
